@@ -6,3 +6,9 @@ import java.util.UUID
 class FoodCartCreatedEvent(
         val foodCartId: UUID
 )
+
+data class ProductSelectedEvent (
+        val foodCartId: UUID,
+        val productId: UUID,
+        val quantity: Int,
+)

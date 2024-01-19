@@ -18,3 +18,7 @@ data class ProductDeselectedEvent (
         val productId: UUID,
         val quantity: Int,
 )
+
+data class OrderConfirmedEvent (
+        val foodCartId: UUID
+)

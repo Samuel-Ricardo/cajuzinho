@@ -1,8 +1,10 @@
 package br.com.sam.ui;
 
 import br.com.sam.coreapi.CreateFoodCartCommand;
+import br.com.sam.coreapi.SelectProductCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.queryhandling.QueryGateway;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +30,16 @@ public class FoodOrderingController {
         return commandGateway.send(new CreateFoodCartCommand(UUID.randomUUID()));
     }
 
+    @PostMapping("/{foodCartId}/select/{productId}/quantity/{quantity}")
+    public void selectProduct(
+            @PathVariable("foodCartId") String foodCartId,
+            @PathVariable("productId") String productId,
+            @PathVariable("quantity") Integer quantity
+    ) {
+        commandGateway.send(new SelectProductCommand(
+                UUID.fromString(foodCartId),
+                UUID.fromString(productId),
+                quantity
+        ));
+    }
 }

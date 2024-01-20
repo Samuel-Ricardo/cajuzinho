@@ -17,4 +17,8 @@ class FoodCartView (
     fun addProducts(productId: UUID, amount: Int) =
         products.compute(productId) {_, quantity -> (quantity ?: 0) + amount}
 
+    fun removeProducts(productId: UUID, amount: Int) {
+        val leftOverQuantity = products.compute(productId) {_, quantity -> (quantity ?: 0) - amount}
+        if(leftOverQuantity == 0) products.remove(productId);
+    }
 }

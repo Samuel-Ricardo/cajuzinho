@@ -1,6 +1,7 @@
 package br.com.sam.ui;
 
 import br.com.sam.coreapi.CreateFoodCartCommand;
+import br.com.sam.coreapi.DeselectProductCommand;
 import br.com.sam.coreapi.SelectProductCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.axonframework.queryhandling.QueryGateway;
@@ -37,6 +38,19 @@ public class FoodOrderingController {
             @PathVariable("quantity") Integer quantity
     ) {
         commandGateway.send(new SelectProductCommand(
+                UUID.fromString(foodCartId),
+                UUID.fromString(productId),
+                quantity
+        ));
+    }
+
+    @PostMapping("/{foodCartId}/deselect/{productId}/quantity/{quantity}")
+    public void deselectProduct(
+            @PathVariable("foodCartId") String foodCartId,
+            @PathVariable("productId") String productId,
+            @PathVariable("quantity") Integer quantity
+    ) {
+        commandGateway.send(new DeselectProductCommand(
                 UUID.fromString(foodCartId),
                 UUID.fromString(productId),
                 quantity

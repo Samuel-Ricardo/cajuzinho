@@ -1,9 +1,6 @@
 package br.com.sam.command;
 
-import br.com.sam.coreapi.CreateFoodCartCommand;
-import br.com.sam.coreapi.FoodCartCreatedEvent;
-import br.com.sam.coreapi.ProductSelectedEvent;
-import br.com.sam.coreapi.SelectProductCommand;
+import br.com.sam.coreapi.*;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
@@ -35,6 +32,18 @@ public class FoodCart {
     @CommandHandler
     public void handle(SelectProductCommand command) {
         AggregateLifecycle.apply(new ProductSelectedEvent(foodCartId, command.getProductId(), command.getQuantity()));
+    }
+
+    @CommandHandler
+    public void handle(DeselectProductCommand command) {
+        AggregateLifecycle
+                .apply(
+                  new ProductDeselectedEvent(
+                    foodCartId,
+                    command.getProductId(),
+                    command.getQuantity()
+                  )
+                );
     }
 
 }

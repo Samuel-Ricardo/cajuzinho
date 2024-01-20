@@ -46,4 +46,10 @@ public class FoodCart {
                 );
     }
 
+    @CommandHandler
+    public void handle(ConfirmOrderCommand command) {
+        AggregateLifecycle.apply(new OrderConfirmedEvent(foodCartId));
+    }
+    
+
 }

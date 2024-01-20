@@ -13,4 +13,8 @@ class FoodCartView (
     val products: MutableMap<UUID, Int>
 ){
     constructor(): this(UUID.randomUUID(), HashMap<UUID, Int>()){}
+
+    fun addProducts(productId: UUID, amount: Int) =
+        products.compute(productId) {_, quantity -> (quantity ?: 0) + amount}
+
 }

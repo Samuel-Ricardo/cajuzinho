@@ -2,12 +2,14 @@ package br.com.sam.command;
 
 import br.com.sam.coreapi.*;
 import org.axonframework.commandhandling.CommandHandler;
+import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
@@ -50,6 +52,12 @@ public class FoodCart {
     public void handle(ConfirmOrderCommand command) {
         AggregateLifecycle.apply(new OrderConfirmedEvent(foodCartId));
     }
-    
+
+    @EventSourcingHandler
+    public void on(FoodCartCreatedEvent event) {
+        foodCartId = event.getFoodCartId();
+        selectedProducts = new HashMap<>();
+        confirmed=false;
+    }
 
 }

@@ -23,4 +23,14 @@ public class FoodCartProjector {
         var view = new FoodCartView(event.getFoodCartId(), Collections.emptyMap());
         repository.save(view);
     }
+
+    @EventHandler
+    public void on(ProductSelectedEvent event) {
+        repository
+                .findById(
+                        event.getFoodCartId()
+                ).ifPresent(
+                        foodCartView -> foodCartView.addProducts(event.getProductId(), event.getQuantity())
+                );
+    }
 }

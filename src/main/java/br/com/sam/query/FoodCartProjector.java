@@ -45,10 +45,8 @@ public class FoodCartProjector {
                 .ifPresent(view -> view.removeProducts(event.getProductId(), event.getQuantity()));
     }
 
-    
-
     @QueryHandler
     public Optional<FoodCartView> on(FindFoodCartQuery query) {
-        return repository.findById(query.getFoodCartId())
+        return repository.findById(query.getFoodCartId());
     }
 }

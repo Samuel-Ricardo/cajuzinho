@@ -60,4 +60,9 @@ public class FoodCart {
         confirmed=false;
     }
 
+    @EventSourcingHandler
+    public void on(ProductSelectedEvent event) {
+        selectedProducts.merge(event.getProductId(), event.getQuantity(), Integer::sum);
+    }
+
 }

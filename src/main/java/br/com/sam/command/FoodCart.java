@@ -65,4 +65,20 @@ public class FoodCart {
         selectedProducts.merge(event.getProductId(), event.getQuantity(), Integer::sum);
     }
 
+    @EventSourcingHandler
+    public void on(ProductDeselectedEvent event) {
+        selectedProducts
+                .computeIfPresent(
+                        event.getProductId(),
+                        (productId, quantity) -> {
+                            if(event.getQuantity() > quantity)
+                                quantity = 0;
+                            else
+                                quantity -= event.getQuantity();
+
+                            return quantity;
+                        }
+                );
+    }
+
 }

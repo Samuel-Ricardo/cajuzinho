@@ -22,3 +22,7 @@ data class DeselectProductCommand (
     val productId: UUID,
     val quantity: Int,
 )
+
+data class ConfirmOrderCommand (
+    @TargetAggregateIdentifier val foodCartId: UUID
+)

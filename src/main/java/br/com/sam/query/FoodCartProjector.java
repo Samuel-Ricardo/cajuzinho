@@ -1,14 +1,17 @@
 package br.com.sam.query;
 
+import br.com.sam.coreapi.FindFoodCartQuery;
 import br.com.sam.coreapi.FoodCartCreatedEvent;
 import br.com.sam.coreapi.ProductDeselectedEvent;
 import br.com.sam.coreapi.ProductSelectedEvent;
 import br.com.sam.repository.FoodCartViewRepository;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.queryhandling.QueryHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
+import java.util.Optional;
 
 @Component
 public class FoodCartProjector {
@@ -40,5 +43,12 @@ public class FoodCartProjector {
         repository
                 .findById(event.getFoodCartId())
                 .ifPresent(view -> view.removeProducts(event.getProductId(), event.getQuantity()));
+    }
+
+    
+
+    @QueryHandler
+    public Optional<FoodCartView> on(FindFoodCartQuery query) {
+        return repository.findById(query.getFoodCartId())
     }
 }

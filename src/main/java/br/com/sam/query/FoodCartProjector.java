@@ -1,6 +1,7 @@
 package br.com.sam.query;
 
 import br.com.sam.coreapi.FoodCartCreatedEvent;
+import br.com.sam.coreapi.ProductDeselectedEvent;
 import br.com.sam.coreapi.ProductSelectedEvent;
 import br.com.sam.repository.FoodCartViewRepository;
 import org.axonframework.eventhandling.EventHandler;
@@ -32,5 +33,12 @@ public class FoodCartProjector {
                 ).ifPresent(
                         foodCartView -> foodCartView.addProducts(event.getProductId(), event.getQuantity())
                 );
+    }
+
+    @EventHandler
+    public void on(ProductDeselectedEvent event) {
+        repository
+                .findById(event.getFoodCartId())
+                .ifPresent(view -> view.removeProducts(event.getProductId(), event.getQuantity()));
     }
 }

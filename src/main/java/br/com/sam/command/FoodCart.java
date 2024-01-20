@@ -81,4 +81,8 @@ public class FoodCart {
                 );
     }
 
+    @EventSourcingHandler
+    public void on (OrderConfirmedEvent event) {
+        confirmed=true;
+    }
 }

@@ -45,3 +45,7 @@
 <p id="project"/>
 
 <h2> | 🛰️ About:  </h2>
+
+<p>
+  This project is a small implementations of Caju Benefits. To keep a good scope i implemented only the Foodcard funtionality using CQRS and Event Sourcing with AxonIQ and Spring Framework by building a hybrid web service that uses Kotlin and Java.
+</p>

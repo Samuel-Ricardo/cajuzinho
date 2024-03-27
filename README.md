@@ -2,7 +2,7 @@
 
 <p align="center"> 
   <a href="https://www.caju.com.br/" target="_blank">
-    <img width="80%" src="https://rhpravoce.com.br/wp-content/uploads/2023/10/caju1.png"/>
+    <img width="80%" src="https://rhpravoce.com.br/wp-content/uploads/2023/10/caju1.png" style="border-radius: 10px;"/>
   </a> 
 </p>
 
@@ -76,3 +76,31 @@
 <h2 id="app">
   💻 | Application:
 </h2>
+
+<p align="center">
+<img width="80%" style="border-radius: 10%;" src="https://assets-global.website-files.com/620135165cdb9f1d60b5d1e3/6585e9f61420f5f2e1a0711a_homeoffice.jpg"/>
+</p>
+
+<br>
+
+<p>
+  This project is inspired by Caju Benefits with focus on Foodcard that you can create and use to select your products and buy, all this is asynchronus and 100% based on Events that are stored to bring data auditability. All this was made with Comand Query Responsability Segregation Architeture.
+</p>
+
+</br>
+
+  <p align="center">
+  <img width="80%" style="border-radius: 10px;" src="https://media.discordapp.net/attachments/852529276083503134/1222346898636013638/image.png?ex=6615e242&is=66036d42&hm=df583c263e14b1fa2b313cd62561a014d621ef118444b660818c4a18b5a0c4c5&=&format=webp&quality=lossless&width=617&height=396"/>
+  </p>
+
+<p>
+
+As you can see, i map the Aggregate, commands and the respective events that they generate. And basically the creation of a Foodcard, selection and deselection of products in list, you can confirm to realize the purchase.
+
+</p>
+
+<p>
+  I use the Axon Server to handle this events, but you can replace this Kafka or RabbitMQ as example.
+</p>
+
+<br>

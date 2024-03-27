@@ -1,7 +1,7 @@
 # cajuzinho
 
 <p align="center"> 
-  <a href="https://spring.io/" target="_blank">
+  <a href="https://www.caju.com.br/" target="_blank">
     <img width="80%" src="https://rhpravoce.com.br/wp-content/uploads/2023/10/caju1.png"/>
   </a> 
 </p>
@@ -49,3 +49,30 @@
 <p>
   This project is a small implementations of Caju Benefits. To keep a good scope i implemented only the Foodcard funtionality using CQRS and Event Sourcing with AxonIQ and Spring Framework by building a hybrid web service that uses Kotlin and Java.
 </p>
+
+<h2 id="techs">
+| 🏗️ - Technologies and Concepts Studied:
+</h2>
+
+> <a href='https://www.axoniq.io/'> <img width="40px" src="https://lp.axoniq.io/hs-fs/hubfs/Logo%20AxonIQ.png?width=190&height=40&name=Logo%20AxonIQ.png" /> </a>
+
+<br>
+
+- Java
+- Kotlin
+- Spring Framework
+- AxonIQ
+- CQRS
+- Event Sourcing
+- PostgreSQL
+- H2 Database
+- Error Handler
+
+> Among Others...
+> <br>
+
+#
+
+<h2 id="app">
+  💻 | Application:
+</h2>

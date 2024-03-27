@@ -104,3 +104,33 @@ As you can see, i map the Aggregate, commands and the respective events that the
 </p>
 
 <br>
+
+<h2 id="run-project"> 
+   👨‍💻 | How to use
+</h2>
+
+<br>
+
+### Open your Git Terminal and clone this repository
+
+```git
+  $ git clone "git@github.com:Samuel-Ricardo/cajuzinho.git"
+```
+
+### Make Pull
+
+```git
+  $ git pull "git@github.com:Samuel-Ricardo/cajuzinho.git"
+```
+
+<br>
+
+You just need to install [IntelliJ IDE](https://www.jetbrains.com/), Java and download maven dependencies with IntelliJ, after this you can run the project.
+
+<br>
+
+#
+
+<h2 id="author">
+  :octocat: | Author:  
+</h2>

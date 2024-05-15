@@ -89,9 +89,9 @@
 
 </br>
 
-  <p align="center">
-  <img width="80%" style="border-radius: 10px;" src="https://media.discordapp.net/attachments/852529276083503134/1222346898636013638/image.png?ex=6615e242&is=66036d42&hm=df583c263e14b1fa2b313cd62561a014d621ef118444b660818c4a18b5a0c4c5&=&format=webp&quality=lossless&width=617&height=396"/>
-  </p>
+
+![image](https://github.com/Samuel-Ricardo/cajuzinho/assets/63983021/441ce52f-7a84-47fe-b6be-5bc138078f9e)
+
 
 <p>
 
